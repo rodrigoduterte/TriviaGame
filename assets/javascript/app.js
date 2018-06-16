@@ -1,5 +1,4 @@
-
-var answersIndices = [2,9,11,17,23]; //,26,34,37,43,46,53,58,61,67,74,76,82,89,93,96];
+var answerIndices = [2,9,11,17,23]; //,26,34,37,43,46,53,58,61,67,74,76,82,89,93,96];
 // http://www.quizmoz.com/tests/Animals-Tests/n/Nervous-System-Test.asp
 var testbank = [ 
 "What is the function of the nervous system?","makes you think","controls and coordinates body activity","responsible for the formation of bones","regulates body temperature",
@@ -40,7 +39,6 @@ var scores = [0,0];
 
 $(document).ready(function(){
     document.getElementById("board").style.display = "none";
-    // $(".wrong").on("click",correctAnswer.bind(this,"wrong"));
     $("#bstart").on("click",function() {
         $("#bstart").hide();
         $("#click").hide();
@@ -58,9 +56,7 @@ function correctAnswer(answer) {
     } else if (answer === "wrong") {
         console.log('The correct answer is:');
         $("#display").html('The correct answer is: <br>');
-        $("#display").append(testbank[answersIndices[tbIndex]]);
-
-        // console.log(testbank[answersIndices[tbIndex]]);
+        $("#display").append(testbank[answerIndices[tbIndex]]);
     }
     clearInterval(timeDisplay);
     tbIndex++;
@@ -92,8 +88,8 @@ function countdown() {
     }
 }
 
-function waitAfterQuizEnds(cow,end) {
-    if (end) {
+function waitAfterQuizEnds(cow,runs) {
+    if (runs) {
         $("#quiz").empty();
         $("#display").empty();
         waitBetweenQuestions = setTimeout(reset,3000);
@@ -109,7 +105,7 @@ function waitAfterQuizEnds(cow,end) {
 function displayQuestion() {                
     var letters = ['A','B','C','D'];
     var toAttach = $("<div id=\"question\"></div>");
-    if (tbIndex === answersIndices.length) {
+    if (tbIndex === answerIndices.length) {
         waitAfterQuizEnds("end",false);
     } else {
         toAttach.text(testbank[tbIndex*5]); 
@@ -118,7 +114,7 @@ function displayQuestion() {
         $("#quiz").append('<br>');
         for(var i=0;i<4;i++) {
             var cIndex = i + (tbIndex * 5) + 1;
-            if (answersIndices.indexOf(cIndex) > -1) {
+            if (answerIndices.indexOf(cIndex) > -1) {
                 toAttach = $("<button id=\"" + letters[i] + "\" class=\"correct choice\">" + letters[i] + ". " + testbank[cIndex] + "</button>");
             } else {
                 toAttach = $("<button id=\"" + letters[i] + "\" class=\"wrong choice\">" + letters[i] + ". " + testbank[cIndex] + "</button>");

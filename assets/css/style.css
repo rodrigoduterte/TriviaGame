@@ -4,14 +4,14 @@
     margin-left: 20%;
     padding-top: 5%;
     margin-top: 5%;
-    background-image: url('../images/brain2.jpg');
+    background-image: url('../images/brain.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     text-align:center;
 }
 
 body {
-    background-image: url('../images/nerves2.jpg');
+    background-image: url('../images/nerves.jpg');
 }
 
 .choice { 
@@ -74,11 +74,8 @@ body {
 
   #click {
     position: absolute;
-    /* margin-left:38%;
-    margin-top: 25%; */
     left: 38%;
     top: 40%;
-    z-index: 3; 
   }
 
 .choice {
@@ -91,7 +88,6 @@ body {
     -webkit-border-radius: 16;
     -moz-border-radius: 16;
     border-radius: 16px;
-    /* font-family: Georgia; */
     color: #eb285f;
     font-size: 30px;
     padding: 15px 15px 15px 15px;
