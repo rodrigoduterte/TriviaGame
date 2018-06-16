@@ -1,0 +1,106 @@
+#board {
+    width: 800px;
+    height: 500px;
+    margin-left: 20%;
+    padding-top: 5%;
+    margin-top: 5%;
+    background-image: url('../images/brain2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+}
+
+body {
+    background-image: url('../images/nerves2.jpg');
+}
+
+.choice { 
+    font-family: 'WaltographRegular'; 
+    font-weight: normal; 
+    font-style: normal; 
+    font-size: 20px;
+    display: block;
+    margin:auto;
+ }
+
+#display, #question { 
+    color:#EF0C0C;
+    font-family: 'BedsteadSemicondensed'; 
+    font-weight: normal; 
+    font-style: normal;
+    font-size: 30px;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    align-items: center;
+}
+
+#quiz {
+    position: relative;
+    word-wrap: break-word;
+    top: 30px;
+    left: 20px;
+}
+
+#bstart {
+    position: absolute;
+    background: #d9348c;
+    background-image: -webkit-linear-gradient(top, #d9348c, #48b82c);
+    background-image: -moz-linear-gradient(top, #d9348c, #48b82c);
+    background-image: -ms-linear-gradient(top, #d9348c, #48b82c);
+    background-image: -o-linear-gradient(top, #d9348c, #48b82c);
+    background-image: linear-gradient(to bottom, #d9348c, #48b82c);
+    -webkit-border-radius: 16;
+    -moz-border-radius: 16;
+    border-radius: 16px;
+    font-family: 'NemoyMedium'; 
+    font-weight: normal; 
+    font-style: normal; 
+    color: #eb9e2a;
+    font-size: 38px;
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    align-items: center;
+    margin-left:30%;
+    margin-top:15%;
+    justify-content: center;
+  }
+  
+  #bstart:hover {
+    background: #3cfaea;
+    text-decoration: none;
+  }
+
+  #click {
+    position: absolute;
+    /* margin-left:38%;
+    margin-top: 25%; */
+    left: 38%;
+    top: 40%;
+    z-index: 3; 
+  }
+
+.choice {
+    background: #34d9d9;
+    background-image: -webkit-linear-gradient(top, #34d9d9, #2bb850);
+    background-image: -moz-linear-gradient(top, #34d9d9, #2bb850);
+    background-image: -ms-linear-gradient(top, #34d9d9, #2bb850);
+    background-image: -o-linear-gradient(top, #34d9d9, #2bb850);
+    background-image: linear-gradient(to bottom, #34d9d9, #2bb850);
+    -webkit-border-radius: 16;
+    -moz-border-radius: 16;
+    border-radius: 16px;
+    /* font-family: Georgia; */
+    color: #eb285f;
+    font-size: 30px;
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    font-stretch: expanded;
+    white-space: nowrap;
+  }
+  
+  .choice:hover {
+    background: #b9fc3c;
+    text-decoration: none;
+  }
