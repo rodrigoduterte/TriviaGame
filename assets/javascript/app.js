@@ -32,14 +32,17 @@ var testbank = [
 var seconds = 10;
 var time=seconds;
 var tbIndex=0;
-var clockRuns=false;
 var timeDisplay;
 var waitBetweenQuestions;
 var scores = [0,0];
+var restartButton;
 
 $(document).ready(function(){
     document.getElementById("board").style.display = "none";
     $("#bstart").on("click",function() {
+        scores = [0,0];
+        tbIndex=0;
+        time=seconds;
         $("#bstart").hide();
         $("#click").hide();
         document.getElementById("board").style.display = "block";
@@ -64,14 +67,12 @@ function correctAnswer(answer) {
 
 function reset() {
     clearTimeout(waitBetweenQuestions);
-    clockRuns = false;
     time = seconds;
     startQuestion();
 }
 
 function startQuestion() {
     timeDisplay = setInterval(countdown, 1000);
-    clockRuns = true;
     $("#display").text(time + " secs left");
     displayQuestion();
 }
@@ -139,4 +140,16 @@ function displayScores() {
     $("#display").append('Ego Boosts(Corrects): ' + scores[0]);
     $("#display").append('<br>');
     $("#display").append('Humility Boosts(Incorrects): ' + scores[1]);
+    $("#display").append('<br>');
+    $("#display").append('<br>');
+    $("#display").append('<br>');
+    restartButton = $("<button id=\"restart\">Get Addicted, Play Again!</button>");
+    $("#display").append(restartButton);
+    restartButton.on("click",function() {
+        $("#display").empty();
+        restartButton.remove();
+        document.getElementById("board").style.display = "none";
+        $("#bstart").show();
+        $("#click").show();
+    });
 }
